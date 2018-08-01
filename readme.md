@@ -2,11 +2,12 @@ This repository contains 2 scripts to generate the certificates needed to secure
 
 ## Prerequistes
 
-1. A private key.
+
+* A private key.
   * openssl genrsa -passout pass:${CA_PASSPHRASE} -aes256 -out ca-key.pem 4096
-2. The public IP address for the VM hosting Docker
-3. The private IP address for the VM hosting Docker
-4. The host name for the VM
+* The public IP address for the VM hosting Docker
+* The private IP address for the VM hosting Docker
+* The host name for the VM
 
 These settings can all be found in Azure on information page for the VM.
 
@@ -25,11 +26,11 @@ The script ./scripts/setup_server.sh can be used to setup the server certificate
 
 The script required several arguments
 
-1. -n  The host name for the VM where Docker is hosted.
-2. -p The public IP address for the VM where Docker is hosted.
-3. -r The private IP address for the VM where Docker is hosted.
-4. -k The private key file.
-5. -c The passphrase for the private key
+* -n  The host name for the VM where Docker is hosted.
+* -p The public IP address for the VM where Docker is hosted.
+* -r The private IP address for the VM where Docker is hosted.
+* -k The private key file.
+* -c The passphrase for the private key
 
 setup_server.sh -n mydomain.westeurope.cloudapp.azure.com -p 192.192.0.1 -r 192.168.0.1 -c [passphrase] -k ./privatekey/ca-key.pem
 
@@ -42,8 +43,8 @@ The script ./scripts/setup_client.sh can be used to setup the client certificate
 
 The script required several arguments
 
-1. -k The private key file.
-2. -c The passphrase for the private key
+* -k The private key file.
+* -c The passphrase for the private key
 
 
 setup_client.sh -c [passphrase] -k ./privatekey/ca-key.pem
