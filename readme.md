@@ -86,4 +86,4 @@ There maybe a command to do this but I don't know it.
   
 No using the Docker command line you can type Docker commands and they will be exectuted against the remote Docker service. i.e.
 
-Docker ps
+docker ps
