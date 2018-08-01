@@ -52,7 +52,7 @@ The client certificates will be placed in a directory called ./client. The 3 fil
 
 ### Windows
 
-C:\Users\[username]\.docker
+C:\Users\\[username]\\.docker
 
 ### Linux
 
@@ -82,3 +82,6 @@ There maybe a command to do this but I don't know it.
 * Add 2 new System variables
   * DOCKER_HOST tcp://[hostName]:2376
   * DOCKER_TLS_VERIFY 1
+  
+No using the Docker command line you can type Docker commands and they will be exectuted against the remote Docker service. i.e.
+Docker ps
