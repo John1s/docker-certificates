@@ -1,9 +1,9 @@
-#This repository contains 2 scripts to generate the certificates needed to secure the Docker port
+This repository contains 2 scripts to generate the certificates needed to secure the Docker port
 
 ## Prerequistes
 
 1. A private key.
-..* openssl genrsa -passout pass:${CA_PASSPHRASE} -aes256 -out ca-key.pem 4096
+  * openssl genrsa -passout pass:${CA_PASSPHRASE} -aes256 -out ca-key.pem 4096
 2. The public IP address for the VM hosting Docker
 3. The private IP address for the VM hosting Docker
 4. The host name for the VM
@@ -16,8 +16,8 @@ You will also need to ensure you can access port 2376 on the VM externally this 
 The script ./scripts/setup_server.sh can be used to setup the server certificate. This script will
 
 * Created 2 new folders
-..* /etc/systemd/system/docker.service.d
-..* /etc/docker/ssl
+  * /etc/systemd/system/docker.service.d
+  * /etc/docker/ssl
 * Create a signing certificate from the private key
 * Create a server certificate to secure the Docker port signed with the signing certificate
 * Create a Docker configuration file. To open port 2376 and secure it with the certificate.
@@ -80,5 +80,5 @@ There maybe a command to do this but I don't know it.
 * Select "Advanced System Settings"
 * Select "Environment Variables"
 * Add 2 new System variables
-..* DOCKER_HOST tcp://[hostName]:2376
-..* DOCKER_TLS_VERIFY 1
+  * DOCKER_HOST tcp://[hostName]:2376
+  * DOCKER_TLS_VERIFY 1
