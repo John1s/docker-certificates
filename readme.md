@@ -87,3 +87,8 @@ There maybe a command to do this but I don't know it.
 No using the Docker command line you can type Docker commands and they will be exectuted against the remote Docker service. i.e.
 
 docker ps
+
+## Docker-compose mounting volumes
+When using docker-compose against a remote Docker instance you can encounter problems with the difference in folder structures between Windows and Linux. If you have problems mounting volumes you may need to set this environment variable.
+
+COMPOSE_CONVERT_WINDOWS_PATHS=1
